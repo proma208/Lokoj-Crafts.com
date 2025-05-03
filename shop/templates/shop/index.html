@@ -249,6 +249,161 @@
             color: #4e342e;
             text-decoration: underline;
         }
+         /* ===== Updated Footer with Policy Links ===== */
+        .craft-footer {
+            background-color: #5d4037;
+            color: #efebe9;
+            padding: 25px 0 15px;
+            position: relative;
+            border-top: 2px solid #4e342e;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #efebe9;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo i {
+            color: #cb9b90;
+            margin-right: 8px;
+        }
+
+        .footer-tagline {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-left: 35px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #d7ccc8;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #cb9b90;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            margin: 15px 0;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .legal-links a {
+            color: #d7ccc8;
+            text-decoration: none;
+            font-size: 0.7rem;
+            transition: color 0.3s;
+        }
+
+        .legal-links a:hover {
+            color: #cb9b90;
+        }
+
+        .copyright {
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+
+        .handcrafted-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(0,0,0,0.2);
+            color: #d7ccc8;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.65rem;
+        }
+
+        .handcrafted-badge i {
+            margin-right: 5px;
+            color: #cb9b90;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            color: #d7ccc8;
+            text-decoration: none;
+            font-size: 0.7rem;
+            transition: color 0.3s;
+        }
+
+        .github-link:hover {
+            color: #cb9b90;
+        }
+
+        .github-link i {
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-links {
+                margin-top: 10px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .legal-links {
+                order: 3;
+                margin-top: 10px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -371,6 +526,52 @@
             {% endif %}
         </div>
     </div>
+     <!-- Updated footer with policy and GitHub links -->
+    <footer class="craft-footer">
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-hands"></i>
+                        Lokoj Crafts
+                    </div>
+                    <div class="footer-tagline">
+                        Preserving Bangladesh's artisan heritage
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <a href="{% url 'index' %}">Home</a>
+                    <a href="{% url 'artisan_detail' artisan_id=1 %}">Artisans</a>
+                    <a href="{% url 'history' %}">History</a>
+                    <a href="{% url 'cart' %}">Cart</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 Lokoj Crafts. All rights reserved.
+                </div>
+
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Shipping Policy</a>
+                    <a href="#" class="github-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <div class="handcrafted-badge">
+                    <i class="fas fa-hand-paper"></i> Handcrafted in Bangladesh
+                </div>
+            </div>
+        </div>
+    </footer>
+
 
     <!-- JavaScript remains exactly the same -->
     <script>
