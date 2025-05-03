@@ -266,3 +266,7 @@ def index(request):
     product_objects = paginator.get_page(page_number)
 
     return render(request, 'shop/index.html', {'product_objects': product_objects})
+
+
+def aboutus(request):
+    return render(request, 'shop/aboutus.html')
